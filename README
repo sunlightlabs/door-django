@@ -8,7 +8,7 @@ http://server/api?device_id=xzy567&pin=123
 
 The device_id and pin values are defined by records in the Key model. Multiple Keys can be associated with a single DoorUser. 
 
-On success the call will return a HTTP 200 with the text message defined in the template 'txt/welcome.txt'. On failure the call will return an HTTP 403 response.
+On success the call will return an HTTP 200 response containing the text message defined in the template 'txt/welcome.txt'. On failure the call will return an HTTP 403 response.
 
 Additional API options include:
 
