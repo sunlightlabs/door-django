@@ -1,0 +1,24 @@
+This is a simple Django application for triggering Sunlight's door front door lock (link to project post forthcoming). The application provides endpoints for native client interfaces and Twilio, an HTTP based voice response system. It also provides a simple Django admin console for manaing door "keys".
+
+Two use the API simply make a GET request to:
+
+http://server/api?device_id=xzy567&pin=123  
+
+On success the call will return a HTTP 200 with a text message defined in the template 'txt/welcome.txt'. On failure the call will return an HTTP 403 message.
+
+Addition API options include:
+
+test=true   
+This option prevents this returns a success or failure response but prevents the door latch from triggering.
+
+format=json 
+This option returns the response data as a JSON encoded data structure including first_name and last_name.
+
+ 
+For Twilio, point the voice URL for the phone number to:
+
+http://server/twilio/
+
+
+
+ 
