@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<Response> 
+    <Say>Hello {{ name }}.</Say>
+    
+    <Gather action="/twillio/" numDigits="3">
+    	<Say>Please enter your pin.</Say>
+    </Gather>
+</Response>  
