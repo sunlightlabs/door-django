@@ -6,7 +6,7 @@ To use the API simply make a GET request to:
 
 http://server/api?device_id=xzy567&pin=123  
 
-The device_id and pin values are defined by records in the Key model, multiple Keys can be associated with a single DoorUser. 
+The device_id and pin values are defined by records in the Key model. Multiple Keys can be associated with a single DoorUser. 
 
 On success the call will return a HTTP 200 with the text message defined in the template 'txt/welcome.txt'. On failure the call will return an HTTP 403 response.
 
