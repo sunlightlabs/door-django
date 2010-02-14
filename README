@@ -4,7 +4,7 @@ This code is provided for demonstration purposes only, use at your own risk.
 
 To use the API simply make a GET request to:
 
-http://server/api?device_id=xzy567&pin=123  
+http://server/api/?device_id=xzy567&pin=123  
 
 The device_id and pin values are defined by records in the Key model. Multiple Keys can be associated with a single DoorUser. 
 
