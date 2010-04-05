@@ -1,6 +1,7 @@
 import settings
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
+from django.views.static import serve
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -9,7 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^/', include('gate.urls')),
-    (r'^iphone/', direct_to_template, {'template': 'iphone.html'}),
+    (r'media/iphone/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 )
 
 if settings.DEBUG:
@@ -23,5 +24,6 @@ if settings.DEBUG:
     del(_media_url, serve)
 
 urlpatterns += patterns('',
+    (r'^iphone/', direct_to_template, {'template': 'iphone.html'}),
     (r'^.*', direct_to_template, {'template': 'default.html'}),
 )
