@@ -10,7 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^/', include('gate.urls')),
-    (r'media/iphone/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
+    (r'iphone-media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 )
 
 if settings.DEBUG:
