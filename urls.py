@@ -7,10 +7,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^/admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
     (r'^/', include('gate.urls')),
     (r'^iphone/', direct_to_template, {'template': 'iphone.html'}),
-    (r'^.*', direct_to_template, {'template': 'default.html'}),
 )
 
 if settings.DEBUG:
@@ -19,5 +18,10 @@ if settings.DEBUG:
     if _media_url.startswith('/'):
         _media_url = _media_url[1:]
         urlpatterns += patterns('',
-            (r'^%s(?P<path>.*)$' % _media_url, serve, {'document_root': settings.MEDIA_ROOT}))
+            (r'^%s(?P<path>.*)$' % _media_url, serve, {'document_root': settings.MEDIA_ROOT})
+        )
     del(_media_url, serve)
+
+urlpatterns += patterns('',
+    (r'^.*', direct_to_template, {'template': 'default.html'}),
+)
